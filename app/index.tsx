@@ -13,6 +13,10 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 16,
     },
+    text: {
+        fontWeight: "bold",
+        fontSize: 15
+    },
 });
 
 export default function Index() {
@@ -24,24 +28,24 @@ export default function Index() {
                 alignItems: "center",
             }}
         >
-            <Text>Please select your language</Text>
+            <Text style={ styles.text }>Select your language</Text>
             <View style={{ flexDirection: "row" }}>
                 <TouchableOpacity
-                    style={styles.buttonStyle}
+                    style={[styles.buttonStyle, { backgroundColor: "orange" }]}
                     onPress={() => Alert.alert("English Selected")}
                 >
                     <Text style={styles.buttonText}>English</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    style={styles.buttonStyle}
-                    onPress={() => Alert.alert("Espanol Escogido")}
+                    style={[styles.buttonStyle, { backgroundColor: "lightblue" }]}
+                    onPress={() => Alert.alert("Español Escogido")}
                 >
-                    <Text style={styles.buttonText}>Spanish</Text>
+                    <Text style={styles.buttonText}>Español</Text>
                 </TouchableOpacity>
             </View>
 
             <Image
-                source={require('../assets/images/DiaBuddyHeros/Hero1.png')}
+                source={require('../assets/images/DiaBuddyHeros/Hero_1.png')}
             />
         </View>
     );
