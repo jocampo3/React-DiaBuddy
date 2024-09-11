@@ -1,4 +1,5 @@
 import { Text, View, TouchableOpacity, Alert, StyleSheet, Image } from "react-native";
+import { router } from 'expo-router';
 
 const styles = StyleSheet.create({
     buttonStyle: {
@@ -41,6 +42,13 @@ export default function Index() {
                     onPress={() => Alert.alert("Español Escogido")}
                 >
                     <Text style={styles.buttonText}>Español</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={[styles.buttonStyle, { backgroundColor: "lightgreen" }]}
+                    onPress={() => router.replace("/about")
+                }
+                >
+                    <Text style={styles.buttonText}>About</Text>
                 </TouchableOpacity>
             </View>
 
