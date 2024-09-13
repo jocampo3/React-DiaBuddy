@@ -1,24 +1,10 @@
-import { Text, View, TouchableOpacity, Alert, StyleSheet, Image } from "react-native";
-import { router } from 'expo-router';
+import * as React from "react";
+import { View, Text, TouchableOpacity, Image } from "react-native";
+import { router } from "expo-router";
+import buttonStyles from "@/components/styles/buttonStyles";
 
-const styles = StyleSheet.create({
-    buttonStyle: {
-        margin: 10,
-        width: 100,
-        backgroundColor: '#DC7633',
-        padding: 10,
-        alignItems: 'center',
-        borderRadius: 5,
-    },
-    buttonText: {
-        color: '#fff',
-        fontSize: 16,
-    },
-    text: {
-        fontWeight: "bold",
-        fontSize: 15
-    },
-});
+// NOTE: I am treating this page as the first page the user sees when opening the app - Jose.
+// For now, they are unable to access the page upon opening the app
 
 export default function Index() {
     return (
@@ -29,29 +15,13 @@ export default function Index() {
                 alignItems: "center",
             }}
         >
-            <Text style={ styles.text }>Select your language</Text>
-            <View style={{ flexDirection: "row" }}>
-                <TouchableOpacity
-                    style={[styles.buttonStyle, { backgroundColor: "orange" }]}
-                    onPress={() => Alert.alert("English Selected")}
-                >
-                    <Text style={styles.buttonText}>English</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={[styles.buttonStyle, { backgroundColor: "lightblue" }]}
-                    onPress={() => Alert.alert("Español Escogido")}
-                >
-                    <Text style={styles.buttonText}>Español</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={[styles.buttonStyle, { backgroundColor: "lightgreen" }]}
-                    onPress={() => router.replace("/about")
-                }
-                >
-                    <Text style={styles.buttonText}>About</Text>
-                </TouchableOpacity>
-            </View>
-
+            <Text>Welcome to DiaBuddy!</Text>
+            <TouchableOpacity
+                style={ buttonStyles.button }
+                onPress={() => router.replace("/home")}
+            >
+                <Text style={ buttonStyles.text }>Get Started!</Text>
+            </TouchableOpacity>
             <Image
                 source={require('../assets/images/DiaBuddyHeros/Hero_1.png')}
             />
