@@ -11,7 +11,7 @@ export default function About() {
           justifyContent: 'center'
         }}
       >
-        <Text>About Screen</Text>
+        <Text>Why am I a DiaBuddy Superhero?</Text>
         <TouchableOpacity
             style={[buttonStyles.button, { backgroundColor: "orange"}]}
             onPress={() => router.replace("/home")}
