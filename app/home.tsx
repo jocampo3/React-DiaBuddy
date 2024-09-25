@@ -2,8 +2,16 @@ import * as React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet, Image, Button} from 'react-native';
 import { router } from 'expo-router';
 import ButtonStyles from "@/components/styles/buttonStyles"
+import i18n from "@/components/i18n";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+    const {t} = useTranslation();
+
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng);
+    };
+
     return (
         <View
             style={{
@@ -16,32 +24,43 @@ export default function Home() {
                 style={[ButtonStyles.button, { backgroundColor: "yellow" }]}
                 onPress={() => router.replace("/about")}
             >
-                <Text style={[ButtonStyles.text, { color: "black"}]}>Why am I a DiaBuddy Superhero/What is type 1 Diabetes?</Text>
+                <Text style={[ButtonStyles.text, { color: "black"}]}>{t("HPB1")}</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={[ButtonStyles.button, { backgroundColor: "orange"}]}
-                onPress={() => router.replace("/glucose_check")}
+                onPress={() => router.replace("/CheckGlucosePage")}
             >
-                <Text style={ButtonStyles.text}>How to check glucose levels</Text>
+                <Text style={ButtonStyles.text}>{t("HPB2")}</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={[ButtonStyles.button, { backgroundColor: "lightblue" }]}
-                onPress={() => router.replace("/insulin")}
+                onPress={() => router.replace("/CheckInsulinPage")}
             >
-                <Text style={ButtonStyles.text}>Oh boy I need insulin!</Text>
+                <Text style={ButtonStyles.text}>{t("HPB3")}</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={[ButtonStyles.button, { backgroundColor: "magenta" }]}
-                onPress={() => router.replace("/food")}
+                onPress={() => router.replace("/FoodPage")}
             >
-                <Text style={ButtonStyles.text}>Healthy food options</Text>
+                <Text style={ButtonStyles.text}>{t("HPB4")}</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={[ButtonStyles.button, { backgroundColor: "red" }]}
-                onPress={() => router.replace("/record_glucose")}
+                onPress={() => router.replace("/RecordGlucosePage")}
             >
-                <Text style={ButtonStyles.text}>Record my glucose levels!</Text>
+                <Text style={ButtonStyles.text}>{t("HPB5")}</Text>
             </TouchableOpacity>
+
+            {/* Language selection buttons */}
+            <View style={{ flexDirection: 'row', marginTop: 20 }}>
+                <TouchableOpacity onPress={() => changeLanguage('en')} style={{ marginHorizontal: 10 }}>
+                    <Text>English</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => changeLanguage('es')} style={{ marginHorizontal: 10 }}>
+                    <Text>Español</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     );
 }

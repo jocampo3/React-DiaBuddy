@@ -3,7 +3,7 @@ import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
 import { router } from "expo-router";
 import buttonStyles from "@/components/styles/buttonStyles";
 
-export default function Food() {
+export default function CheckGlucosePage() {
     return (
         <View style={{
             flex: 1,
@@ -11,7 +11,7 @@ export default function Food() {
             justifyContent: 'center'
         }}
         >
-            <Text>What are good choices to continue being a DiaBuddy superhero? TODO: Insert health food options</Text>
+            <Text>This is how you check you glucose levels! TODO: Insert images demonstrating how to monitor levels</Text>
             <TouchableOpacity
                 style={[buttonStyles.button, { backgroundColor: "orange"}]}
                 onPress={() => router.replace("/home")}

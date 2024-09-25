@@ -3,7 +3,7 @@ import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
 import { router } from "expo-router";
 import buttonStyles from "@/components/styles/buttonStyles";
 
-export default function Insulin() {
+export default function CheckInsulinPage() {
     return (
         <View style={{
             flex: 1,
