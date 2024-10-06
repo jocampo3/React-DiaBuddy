@@ -1,9 +1,10 @@
+import 'intl-pluralrules';
 import * as React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { router } from "expo-router";
 import { useTranslation } from 'react-i18next';  // Import useTranslation hook
 import i18n from '@/components/i18n';  // Import your i18n configuration
-import buttonStyles from "@/components/styles/buttonStyles";
+import buttonStyles from "@/assets/styles/buttonStyles";
 
 export default function Index() {
     const { t } = useTranslation();  // Initialize useTranslation hook
@@ -26,7 +27,7 @@ export default function Index() {
 
             <TouchableOpacity
                 style={buttonStyles.button}
-                onPress={() => router.replace("/home")}
+                onPress={() => router.replace("/pages/home")}
             >
                 <Text style={buttonStyles.text}>{t('get_started')}</Text>
             </TouchableOpacity>

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
 import { router } from "expo-router";
-import buttonStyles from "@/components/styles/buttonStyles";
+import buttonStyles from "@/assets/styles/buttonStyles";
 
 export default function FoodPage() {
     return (
@@ -14,7 +14,7 @@ export default function FoodPage() {
             <Text>What are good choices to continue being a DiaBuddy superhero? TODO: Insert health food options</Text>
             <TouchableOpacity
                 style={[buttonStyles.button, { backgroundColor: "orange"}]}
-                onPress={() => router.replace("/home")}
+                onPress={() => router.replace("/pages/home")}
             >
                 <Text>Home</Text>
             </TouchableOpacity>

@@ -7,11 +7,12 @@ export default function RootLayout() {
     <Stack>
       <Stack.Screen name="index" />
       <Stack.Screen name="about" />
-      <Stack.Screen name="lang"/>
+      <Stack.Screen name="SelectLangPage"/>
       <Stack.Screen name="home"/>
-      <Stack.Screen name="checkglucosepage"/>
-      <Stack.Screen name="insulin"/>
-      <Stack.Screen name="foodpage"/>
+      <Stack.Screen name="CheckGlucosePage"/>
+      <Stack.Screen name="CheckInsulinPage"/>
+      <Stack.Screen name="FoodPage"/>
+      <Stack.Screen name="RecordGlucosePage"/>
     </Stack>
   );
 }

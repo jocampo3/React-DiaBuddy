@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Alert, Text, TouchableOpacity, View } from "react-native";
 import { router } from "expo-router";
-import buttonStyles from "@/components/styles/buttonStyles";
+import buttonStyles from "@/assets/styles/buttonStyles";
 
 export default function Language() {
     return (
@@ -15,7 +15,7 @@ export default function Language() {
             <View>
                 <TouchableOpacity
                     style={[buttonStyles.button, { backgroundColor: "orange" }]}
-                    onPress={() => router.replace("/home")}
+                    onPress={() => router.replace("/pages/home")}
                 >
                     <Text>Home</Text>
                 </TouchableOpacity>

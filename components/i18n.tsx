@@ -14,7 +14,8 @@ i18n
         },
         interpolation: {
             escapeValue: false // React already escapes output by default
-        }
+        },
+        compatibilityJSON: 'v3',  // Add this to handle environments without Intl support
     });
 
 export default i18n;
