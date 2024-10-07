@@ -50,12 +50,6 @@ export default function Home() {
             >
                 <Text style={ButtonStyles.text}>{t("HPB5")}</Text>
             </TouchableOpacity>
-            <TouchableOpacity
-                onPress={() => router.replace("/pages/CreateAccountPage")}
-
-            >
-                <Text>Test Database</Text>
-            </TouchableOpacity>
 
             {/* Language selection buttons */}
             <View style={{ flexDirection: 'row', marginTop: 20 }}>
