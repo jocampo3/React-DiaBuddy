@@ -5,14 +5,14 @@ import { Stack } from "expo-router";
 export default function RootLayout() {
   return (
     <Stack>
-      <Stack.Screen name="index" />
-      <Stack.Screen name="about" />
-      <Stack.Screen name="SelectLangPage"/>
-      <Stack.Screen name="home"/>
-      <Stack.Screen name="CheckGlucosePage"/>
-      <Stack.Screen name="CheckInsulinPage"/>
-      <Stack.Screen name="FoodPage"/>
-      <Stack.Screen name="RecordGlucosePage"/>
+        <Stack.Screen name="index" />
+        <Stack.Screen name="pages/HomePage"/>
+        <Stack.Screen name="pages/SelectLangPage"/>
+        <Stack.Screen name="pages/about/AboutPage" />
+        <Stack.Screen name="pages/checkinsulin/CheckInsulinPage"/>
+        <Stack.Screen name="pages/checkglucose/CheckGlucosePage"/>
+        <Stack.Screen name="pages/recordglucose/RecordGlucosePage"/>
+        <Stack.Screen name="pages/food/FoodPage"/>
     </Stack>
   );
 }

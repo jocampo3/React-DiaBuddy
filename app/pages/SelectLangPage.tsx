@@ -1,9 +1,20 @@
 import * as React from "react";
-import { Alert, Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import { router } from "expo-router";
 import buttonStyles from "@/assets/styles/buttonStyles";
+import i18n from "@/components/i18n";
+import { useTranslation } from "react-i18next";
 
 export default function Language() {
+    const { t } = useTranslation();
+
+    const changeLanguageAndRedirect = (lng, path) => {
+        i18n.changeLanguage(lng).then(() => {
+            // Redirect after language is successfully changed
+            router.replace(path);
+        });
+    };
+
     return (
         <View
             style={{
@@ -14,24 +25,18 @@ export default function Language() {
         >
             <View>
                 <TouchableOpacity
-                    style={[buttonStyles.button, { backgroundColor: "orange" }]}
-                    onPress={() => router.replace("/pages/home")}
-                >
-                    <Text>Home</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
                     style={[buttonStyles.button, { backgroundColor: "lightblue" }]}
-                    onPress={() => Alert.alert("Spanish Selected")}
+                    onPress={() => changeLanguageAndRedirect('es', '/pages/HomePage')}
                 >
-                    <Text style={buttonStyles.text}>Spanish</Text>
+                    <Text style={buttonStyles.text}>Español</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={[buttonStyles.button, { backgroundColor: "orange" }]}
-                    onPress={() => Alert.alert("English Selected")}
+                    onPress={() => changeLanguageAndRedirect('en', '/pages/HomePage')}
                 >
                     <Text style={buttonStyles.text}>English</Text>
                 </TouchableOpacity>
             </View>
         </View>
-    )
+    );
 }

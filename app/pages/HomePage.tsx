@@ -4,8 +4,9 @@ import { router } from 'expo-router';
 import ButtonStyles from "@/assets/styles/buttonStyles"
 import i18n from "@/components/i18n";
 import { useTranslation } from "react-i18next";
+import buttonStyles from "@/assets/styles/buttonStyles";
 
-export default function Home() {
+export default function HomePage() {
     const {t} = useTranslation();
 
     const changeLanguage = (lng) => {
@@ -16,39 +17,46 @@ export default function Home() {
         <View
             style={{
                 flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center'
+                alignItems: "flex-end",
+                justifyContent: "center"
             }}
         >
             <TouchableOpacity
                 style={[ButtonStyles.button, { backgroundColor: "yellow" }]}
-                onPress={() => router.replace("/pages/about")}
+                onPress={() => router.replace("/pages/about/AboutPage")}
             >
                 <Text style={[ButtonStyles.text, { color: "black"}]}>{t("HPB1")}</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={[ButtonStyles.button, { backgroundColor: "orange"}]}
-                onPress={() => router.replace("/pages/CheckGlucosePage")}
+                onPress={() => router.replace("/pages/checkglucose/CheckGlucosePage")}
             >
                 <Text style={ButtonStyles.text}>{t("HPB2")}</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={[ButtonStyles.button, { backgroundColor: "lightblue" }]}
-                onPress={() => router.replace("/pages/CheckInsulinPage")}
+                onPress={() => router.replace("/pages/checkinsulin/CheckInsulinPage")}
             >
                 <Text style={ButtonStyles.text}>{t("HPB3")}</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={[ButtonStyles.button, { backgroundColor: "magenta" }]}
-                onPress={() => router.replace("/pages/FoodPage")}
+                onPress={() => router.replace("/pages/food/FoodPage")}
             >
                 <Text style={ButtonStyles.text}>{t("HPB4")}</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={[ButtonStyles.button, { backgroundColor: "red" }]}
-                onPress={() => router.replace("/pages/RecordGlucosePage")}
+                onPress={() => router.replace("/pages/recordglucose/RecordGlucosePage")}
             >
                 <Text style={ButtonStyles.text}>{t("HPB5")}</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                style={[buttonStyles.button, {backgroundColor: "black"}]}
+                onPress={() => router.replace('/pages/settings')}
+            >
+                <Text style={ButtonStyles.text}>Settings</Text>
             </TouchableOpacity>
 
             {/* Language selection buttons */}

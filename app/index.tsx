@@ -27,7 +27,7 @@ export default function Index() {
 
             <TouchableOpacity
                 style={buttonStyles.button}
-                onPress={() => router.replace("/pages/home")}
+                onPress={() => router.replace("/pages/SelectLangPage")}
             >
                 <Text style={buttonStyles.text}>{t('get_started')}</Text>
             </TouchableOpacity>
