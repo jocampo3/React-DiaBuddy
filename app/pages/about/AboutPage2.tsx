@@ -3,7 +3,7 @@ import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
 import { router } from "expo-router";
 import buttonStyles from "@/assets/styles/buttonStyles";
 
-export default function AboutPage_2() {
+export default function AboutPage2() {
     return (
         <View
             style={{
@@ -13,12 +13,6 @@ export default function AboutPage_2() {
             }}
         >
             <Text>This is the second About Page!</Text>
-            <TouchableOpacity
-                style={[buttonStyles.button, { backgroundColor: 'orange' }]}
-                onPress={() => router.replace('/pages/HomePage')}
-            >
-                <Text>Back to Home</Text>
-            </TouchableOpacity>
         </View>
     );
 }
