@@ -1,11 +1,10 @@
 import * as SQLite from 'expo-sqlite';
 
-const db = SQLite.openDatabase('glucose.db');
+const db = await SQLite.openDatabaseAsync('diabuddy');
 
 export const setupDatabase = (): void => {
-    db.transaction(tx => {
-        tx.executeSql(
-            `CREATE TABLE IF NOT EXISTS glucoselog (
+    db.execAsync(
+        `CREATE TABLE IF NOT EXISTS glucoselog (
          id INTEGER PRIMARY KEY AUTOINCREMENT,
          datereading DATE,
          breakfast REAL,
@@ -16,8 +15,7 @@ export const setupDatabase = (): void => {
          created DATETIME DEFAULT CURRENT_TIMESTAMP,
          modified DATETIME DEFAULT CURRENT_TIMESTAMP
        )`
-        );
-    });
+    );
 };
 
 export default db;

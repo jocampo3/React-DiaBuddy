@@ -3,7 +3,17 @@ import { useState } from 'react';
 import { TouchableOpacity, View, Text, TextInput, StyleSheet } from 'react-native';
 import { router } from "expo-router";
 import buttonStyles from "@/assets/styles/buttonStyles";
-import db from "@/database";
+import db from "@/app/database";
+import { Double } from 'react-native/Libraries/Types/CodegenTypes';
+
+const handleSave = async (breakfast:string, lunch:string, dinner:string, bedtime:string, notes:string): Promise<void> => {
+    await db.runAsync(
+            `INSERT INTO glucoselog (datereading, breakfast, lunch, dinner, bedtime, notes) VALUES (?, ?, ?, ?, ?, ?)`,
+            new Date().toISOString().split('T')[0], breakfast, lunch, dinner, bedtime, notes
+        );
+    router.replace("/pages/HomePage");
+};
+
 
 export default function RecordGlucosePage(): JSX.Element {
     const [breakfast, setBreakfast] = useState<string>("");
@@ -11,18 +21,6 @@ export default function RecordGlucosePage(): JSX.Element {
     const [dinner, setDinner] = useState<string>("");
     const [bedtime, setBedtime] = useState<string>("");
     const [notes, setNotes] = useState<string>("");
-
-    const handleSave = (): void => {
-        db.transaction(tx => {
-            tx.executeSql(
-                `INSERT INTO glucoselog (datereading, breakfast, lunch, dinner, bedtime, notes) VALUES (?, ?, ?, ?, ?, ?)`,
-                [new Date().toISOString().split('T')[0], breakfast, lunch, dinner, bedtime, notes],
-                () => console.log("Data saved successfully!"),
-                (txObj, error) => console.error("Error saving data:", error)
-            );
-        });
-        router.replace("/pages/HomePage");
-    };
 
     return (
         <View style={styles.container}>
@@ -62,7 +60,7 @@ export default function RecordGlucosePage(): JSX.Element {
                 value={notes}
                 onChangeText={setNotes}
             />
-            <TouchableOpacity style={[buttonStyles.button, { backgroundColor: "orange" }]} onPress={handleSave}>
+            <TouchableOpacity style={[buttonStyles.button, { backgroundColor: "orange" }]} onPress={()=>handleSave(breakfast, lunch, dinner, bedtime, notes)}>
                 <Text>Save</Text>
             </TouchableOpacity>
         </View>
