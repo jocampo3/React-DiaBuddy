@@ -9,7 +9,7 @@ import buttonStyles from "@/assets/styles/buttonStyles";
 export default function HomePage() {
     const {t} = useTranslation();
 
-    const changeLanguage = (lng) => {
+    const changeLanguage = (lng: string) => {
         i18n.changeLanguage(lng);
     };
 

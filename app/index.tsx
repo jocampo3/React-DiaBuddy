@@ -5,12 +5,18 @@ import { router } from "expo-router";
 import { useTranslation } from 'react-i18next';  // Import useTranslation hook
 import i18n from '@/components/i18n';  // Import your i18n configuration
 import buttonStyles from "@/assets/styles/buttonStyles";
+import { setupDatabase } from '@/database'; // database setup function
+import {useEffect} from "react";
 
 export default function Index() {
     const { t } = useTranslation();  // Initialize useTranslation hook
 
+    useEffect(() => {
+        setupDatabase();
+    }, []);
+
     // Function to change the language
-    const changeLanguage = (lng) => {
+    const changeLanguage = (lng: string) => {
         i18n.changeLanguage(lng);
     };
 
