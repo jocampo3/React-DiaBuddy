@@ -5,5 +5,10 @@
   "HPB2": "Cómo comprobar los niveles de glucosa",
   "HPB3": "¡Oh no, necesito insulina!",
   "HPB4": "Opciones de comida saludable",
-  "HPB5": "¡Registra mis niveles de glucosa!"
+  "HPB5": "¡Registra mis niveles de glucosa!",
+  "lang": "Idioma",
+  "time": "Horario",
+  "backHome": "Regresar al Inicio",
+  "notif": "Notificaciones",
+  "pin": "Codigo"
 }

@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
     setting: {
         position: 'absolute', // Position it absolutely
         top: 20,             // Adjust to your preference
-        left: 20,            // Adjust to your preference
-        zIndex: 1,           // Ensure it appears above other elements
+        zIndex: 1,            // Adjust to your preference
+        right: 400,           // Ensure it appears above other elements
     },
     text: {
         margin: "auto",

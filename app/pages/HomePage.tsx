@@ -25,6 +25,12 @@ export default function HomePage() {
     return (
         <View style={styles.layout}>
             <TouchableOpacity
+                style={styles.setting}
+                onPress={() => router.replace('/pages/settings/settings')}
+            >
+                <Icon name="cog" size={30} color="black" />
+            </TouchableOpacity>
+            <TouchableOpacity
                 style={[styles.buttonStyle1, { backgroundColor: "yellow" }]}
                 onPress={() => router.replace("/pages/about/AboutSection")}
             >
@@ -54,16 +60,6 @@ export default function HomePage() {
             >
                 <Text style={styles.text}>{t("HPB5") || 'Default HPB5'}</Text>
             </TouchableOpacity>
-
-            {/* Language selection buttons */}
-            <View style={{ flexDirection: 'row', marginTop: 20 }}>
-                <TouchableOpacity onPress={() => changeLanguage('en')} style={{ marginHorizontal: 10 }}>
-                    <Text>English</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => changeLanguage('es')} style={{ marginHorizontal: 10 }}>
-                    <Text>Español</Text>
-                </TouchableOpacity>
-            </View>
         </View>
     );
 }

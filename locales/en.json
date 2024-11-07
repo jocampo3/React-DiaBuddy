@@ -5,5 +5,10 @@
   "HPB2": "How to check glucose levels",
   "HPB3": "Oh boy I need insulin!",
   "HPB4": "Healthy food options",
-  "HPB5": "Record my glucose levels!"
+  "HPB5": "Record my glucose levels!",
+  "lang": "Language",
+  "time": "Time",
+  "backHome": "Back to home",
+  "notif": "Notifications",
+  "pin": "Pin"
 }
