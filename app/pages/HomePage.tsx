@@ -1,74 +1,65 @@
 import * as React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet, Image, Button} from 'react-native';
+import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { router } from 'expo-router';
-import ButtonStyles from "@/assets/styles/buttonStyles"
 import i18n from "@/components/i18n";
 import { useTranslation } from "react-i18next";
-import buttonStyles from "@/assets/styles/buttonStyles";
+import styles from "@/assets/styles/HomePage/HomePageStyles";
+import { useFonts } from 'expo-font';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function HomePage() {
-    const {t} = useTranslation();
+    const [fontsLoaded] = useFonts({
+        'Bangers-Regular': require('@/assets/fonts/Bangers/Bangers-Regular.ttf'),
+    });
 
-    const changeLanguage = (lng) => {
+    const { t } = useTranslation();
+
+    const changeLanguage = (lng: string) => {
         i18n.changeLanguage(lng);
     };
 
+    if (!fontsLoaded) {
+        return <ActivityIndicator size="large" color="#0000ff" />;
+    }
+
     return (
-        <View
-            style={{
-                flex: 1,
-                alignItems: "flex-end",
-                justifyContent: "center"
-            }}
-        >
+        <View style={styles.layout}>
             <TouchableOpacity
-                style={[ButtonStyles.button, { backgroundColor: "yellow" }]}
-                onPress={() => router.replace("/pages/about/AboutPage")}
+                style={styles.setting}
+                onPress={() => router.replace('/pages/settings/settings')}
             >
-                <Text style={[ButtonStyles.text, { color: "black"}]}>{t("HPB1")}</Text>
+                <Icon name="cog" size={30} color="black" />
             </TouchableOpacity>
             <TouchableOpacity
-                style={[ButtonStyles.button, { backgroundColor: "orange"}]}
-                onPress={() => router.replace("/pages/checkglucose/CheckGlucosePage")}
+                style={[styles.buttonStyle1, { backgroundColor: "yellow" }]}
+                onPress={() => router.replace("/pages/about/AboutSection")}
             >
-                <Text style={ButtonStyles.text}>{t("HPB2")}</Text>
+                <Text style={[styles.text, { color: "black" }]}>{t("HPB1") || 'Default HPB1'}</Text>
             </TouchableOpacity>
             <TouchableOpacity
-                style={[ButtonStyles.button, { backgroundColor: "lightblue" }]}
-                onPress={() => router.replace("/pages/checkinsulin/CheckInsulinPage")}
+                style={[styles.buttonStyle2, { backgroundColor: "orange" }]}
+                onPress={() => router.replace("/pages/checkglucose/CheckGlucoseSection")}
             >
-                <Text style={ButtonStyles.text}>{t("HPB3")}</Text>
+                <Text style={styles.text}>{t("HPB2") || 'Default HPB2'}</Text>
             </TouchableOpacity>
             <TouchableOpacity
-                style={[ButtonStyles.button, { backgroundColor: "magenta" }]}
-                onPress={() => router.replace("/pages/food/FoodPage")}
+                style={[styles.buttonStyle1, { backgroundColor: "lightblue" }]}
+                onPress={() => router.replace("/pages/checkinsulin/CheckInsulinSection")}
             >
-                <Text style={ButtonStyles.text}>{t("HPB4")}</Text>
+                <Text style={styles.text}>{t("HPB3") || 'Default HPB3'}</Text>
             </TouchableOpacity>
             <TouchableOpacity
-                style={[ButtonStyles.button, { backgroundColor: "red" }]}
+                style={[styles.buttonStyle2, { backgroundColor: "magenta" }]}
+                onPress={() => router.replace("/pages/food/FoodSection")}
+            >
+                <Text style={styles.text}>{t("HPB4") || 'Default HPB4'}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={[styles.buttonStyle1, { backgroundColor: "red" }]}
                 onPress={() => router.replace("/pages/recordglucose/RecordGlucosePage")}
             >
-                <Text style={ButtonStyles.text}>{t("HPB5")}</Text>
+                <Text style={styles.text}>{t("HPB5") || 'Default HPB5'}</Text>
             </TouchableOpacity>
-
-            <TouchableOpacity
-                style={[buttonStyles.button, {backgroundColor: "black"}]}
-                onPress={() => router.replace('/pages/settings')}
-            >
-                <Text style={ButtonStyles.text}>Settings</Text>
-            </TouchableOpacity>
-
-            {/* Language selection buttons */}
-            <View style={{ flexDirection: 'row', marginTop: 20 }}>
-                <TouchableOpacity onPress={() => changeLanguage('en')} style={{ marginHorizontal: 10 }}>
-                    <Text>English</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={() => changeLanguage('es')} style={{ marginHorizontal: 10 }}>
-                    <Text>Español</Text>
-                </TouchableOpacity>
-            </View>
         </View>
     );
 }
