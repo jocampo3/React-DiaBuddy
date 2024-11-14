@@ -1,45 +1,83 @@
 import 'intl-pluralrules';
 import * as React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity, Image, StyleSheet, ActivityIndicator } from "react-native";
 import { router } from "expo-router";
-import { useTranslation } from 'react-i18next';  // Import useTranslation hook
-import i18n from '@/components/i18n';  // Import your i18n configuration
-import buttonStyles from "@/assets/styles/buttonStyles";
+import { useTranslation } from 'react-i18next';
+import i18n from '@/components/i18n'; 
+import { useFonts } from 'expo-font';
 
 export default function Index() {
-    const { t } = useTranslation();  // Initialize useTranslation hook
+    const [fontsLoaded] = useFonts({
+        'Bangers-Regular': require('@/assets/fonts/Bangers/Bangers-Regular.ttf'),
+    });
 
-    // Function to change the language
-    const changeLanguage = (lng) => {
+    const { t } = useTranslation();
+
+    // Early return while fonts are loading
+    if (!fontsLoaded) {
+        return <ActivityIndicator size="large" color="#0000ff" />;
+    }
+
+    const changeLanguage = (lng: string) => {
         i18n.changeLanguage(lng);
     };
 
     return (
-        <View>
-            {/* Use t('key') for translations */}
-            <Text>{t('welcome')}</Text>
+        <View style={styles.container}>
+            {/* Title */}
+            <Text style={styles.title}>{t('welcome')}</Text>
 
-            <TouchableOpacity
-                style={buttonStyles.button}
-                onPress={() => router.replace("/pages/SelectLangPage")}
-            >
-                <Text style={buttonStyles.text}>{t('get_started')}</Text>
-            </TouchableOpacity>
-
+            {/* Hero image */}
             <Image
                 source={require('../assets/images/DiaBuddyHeros/Hero_1.png')}
+                style={styles.heroImage}
             />
-
-            {/* Language selection buttons */}
-            <View style={{ flexDirection: 'row', marginTop: 20 }}>
-                <TouchableOpacity onPress={() => changeLanguage('en')} style={{ marginHorizontal: 10 }}>
-                    <Text>English</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={() => changeLanguage('es')} style={{ marginHorizontal: 10 }}>
-                    <Text>Español</Text>
-                </TouchableOpacity>
-            </View>
+            
+            {/* Start button */}
+            <TouchableOpacity
+                style={styles.button}
+                onPress={() => router.replace("/pages/SelectLangPage")}
+            >
+                <Text style={styles.buttonText}>{t('get_started')}</Text>
+            </TouchableOpacity>
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#f0f8ff',
+        padding: 20,
+    },
+    title: {
+        fontSize: 45,
+        textAlign: 'center',
+        marginBottom: 20,
+        color: '#ff6347',  // Playful color for kids
+        fontFamily: 'Bangers-Regular',  // Fun, kid-friendly font
+    },
+    heroImage: {
+        width: 300,
+        height: 300,
+        marginBottom: 20,
+        resizeMode: 'contain',
+    },
+    button: {
+        backgroundColor: '#ff6347',
+        paddingVertical: 12,  // Reduced vertical padding
+        paddingHorizontal: 25,  // Reduced horizontal padding
+        borderRadius: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 20,
+    },
+    buttonText: {
+        color: '#fff',
+        fontSize: 30,  // Reduced font size for smaller button
+        fontFamily: 'Bangers-Regular',
+        textTransform: 'uppercase',
+    },
+});
