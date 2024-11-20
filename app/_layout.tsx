@@ -39,6 +39,18 @@ export default function RootLayout() {
           name="pages/about/AboutSection"
           options={{ headerShown: false }}
         />
+        <Stack.Screen
+          name="pages/checkglucose/CheckGlucoseSection"
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="pages/checkinsulin/CheckInsulinSection"
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="pages/food/FoodSection"
+          options={{ headerShown: false }}
+        />
     </Stack>
   );
 }

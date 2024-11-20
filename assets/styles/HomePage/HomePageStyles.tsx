@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
     buttonStyle1: {
         alignItems: "center",      // Center the button content horizontally
         justifyContent: "center",  // Center the button content vertically
-        width: width * 0.8,        // 80% of the screen width
-        height: height * 0.1,      // 10% of the screen height
+        width: width * 0.9,        // 80% of the screen width
+        height: height * 0.12,      // 10% of the screen height
         backgroundColor: "#DC7633",
         marginBottom: height * 0.05, // 5% of the screen height
         padding: 20,               // Fixed padding to maintain button shape
@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
     buttonStyle2: {
         alignItems: "center",      // Center the button content horizontally
         justifyContent: "center",  // Center the button content vertically
-        width: width * 0.8,        // 80% of the screen width
-        height: height * 0.1,      // 10% of the screen height
+        width: width * 0.9,        // 80% of the screen width
+        height: height * 0.12,      // 10% of the screen height
         backgroundColor: "#DC7633",
         marginBottom: height * 0.05, // 5% of the screen height
         padding: 20,               // Fixed padding to maintain button shape

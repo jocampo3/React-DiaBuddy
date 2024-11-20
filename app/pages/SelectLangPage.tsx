@@ -16,12 +16,6 @@ export default function Language() {
 
     return (
         <View style={styles.container}>
-            {/* Background image or theme */}
-            {/* <Image 
-                source={require('../assets/images/select_language_bg.png')} 
-                style={styles.backgroundImage}
-            /> */}
-
             <Text style={styles.title}>Select Your Language</Text>
 
             <View style={styles.buttonContainer}>
@@ -39,12 +33,6 @@ export default function Language() {
                     <Text style={styles.buttonText}>{t('english')}</Text>
                 </TouchableOpacity>
             </View>
-
-            {/* Fun graphic
-            <Image 
-                source={require('../assets/images/language_select_hero.png')} 
-                style={styles.heroImage} 
-            /> */}
         </View>
     );
 }
