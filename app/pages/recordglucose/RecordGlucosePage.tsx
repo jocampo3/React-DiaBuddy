@@ -1,29 +1,17 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { TouchableOpacity, View, Text, TextInput, StyleSheet } from 'react-native';
 import { router } from "expo-router";
 import buttonStyles from "@/assets/styles/buttonStyles";
-import db from "@/app/database";
+import { dbSave, dbRetrieve } from "@/app/database";
 import { Double } from 'react-native/Libraries/Types/CodegenTypes';
+import { use } from 'i18next';
 
 const handleSave = async (breakfast:string, lunch:string, dinner:string, bedtime:string, notes:string): Promise<void> => {
-    console.log(db);
-    if (!db) {
-        console.error("Database is not initialized.");
-        return;
-    }
-
-    try {
-        await db.runAsync(
-            `INSERT INTO glucoselog (datereading, breakfast, lunch, dinner, bedtime, notes) VALUES (?, ?, ?, ?, ?, ?)`,
-            new Date().toISOString().split('T')[0], breakfast, lunch, dinner, bedtime, notes
-        );
-        router.replace("/pages/HomePage");
-    } catch (error) {
-        console.error("Error saving glucose log:", error);
-    }
-};
-
+     console.log("calling dbSave")
+     dbSave(breakfast, lunch, dinner, bedtime, notes);
+     router.replace("/pages/HomePage");
+}
 
 export default function RecordGlucosePage(): JSX.Element {
     const [breakfast, setBreakfast] = useState<string>("");
@@ -32,6 +20,11 @@ export default function RecordGlucosePage(): JSX.Element {
     const [bedtime, setBedtime] = useState<string>("");
     const [notes, setNotes] = useState<string>("");
 
+    useEffect(() => {
+        console.log("retrieving existing logs")
+        dbRetrieve();
+    }, [])
+    
     return (
         <View style={styles.container}>
             <Text>Record my glucose levels</Text>

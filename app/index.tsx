@@ -12,6 +12,7 @@ export default function Index() {
     const { t } = useTranslation();  // Initialize useTranslation hook
 
     useEffect(() => {
+        console.log("setting up database")
         setupDatabase();
     }, []);
 
