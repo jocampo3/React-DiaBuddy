@@ -7,11 +7,21 @@ import db from "@/app/database";
 import { Double } from 'react-native/Libraries/Types/CodegenTypes';
 
 const handleSave = async (breakfast:string, lunch:string, dinner:string, bedtime:string, notes:string): Promise<void> => {
-    await db.runAsync(
+    console.log(db);
+    if (!db) {
+        console.error("Database is not initialized.");
+        return;
+    }
+
+    try {
+        await db.runAsync(
             `INSERT INTO glucoselog (datereading, breakfast, lunch, dinner, bedtime, notes) VALUES (?, ?, ?, ?, ?, ?)`,
             new Date().toISOString().split('T')[0], breakfast, lunch, dinner, bedtime, notes
         );
-    router.replace("/pages/HomePage");
+        router.replace("/pages/HomePage");
+    } catch (error) {
+        console.error("Error saving glucose log:", error);
+    }
 };
 
 
