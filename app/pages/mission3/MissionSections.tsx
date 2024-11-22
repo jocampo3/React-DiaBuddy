@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import {View, Text, Button, TouchableOpacity} from 'react-native';
 import { router } from 'expo-router';
-import CheckGlucosePage from "./CheckGlucosePage";
-import CheckGlucosePage2 from "./CheckGlucosePage2";
-import CheckGlucosePage3 from "./CheckGlucosePage3";
-import ButtonStyles from "@/assets/styles/buttonStyles";
+import CheckInsulinPage from "./Mission3_1";
+import CheckInsulinPage2 from "./Mission3_2";
+// import ButtonStyles from "@/assets/styles/buttonStyles";
+import styles from "@/assets/styles/SectionStyles/buttonStyles";
 
 // Array of pages for dynamic navigation
-const pages = [CheckGlucosePage, CheckGlucosePage2, CheckGlucosePage3];
+const pages = [CheckInsulinPage, CheckInsulinPage2];
 
-const CheckGlucoseSection: React.FC = () => {
+const CheckInsulin: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(0);
 
     // Navigate to the next page
@@ -36,26 +36,26 @@ const CheckGlucoseSection: React.FC = () => {
             <View style={{ flexDirection: 'row', marginTop: 20 }}>
                 {currentPage > 0 && (
                     <TouchableOpacity
-                        style={ButtonStyles.button}
+                        style={styles.pageButtons}
                         onPress={goToPreviousPage}
                     >
-                        <Text>Previous Page</Text>
+                        <Text style={styles.text}>Previous Page</Text>
                     </TouchableOpacity>
 
                 )}
                 {currentPage < pages.length - 1 ? (
                     <TouchableOpacity
-                        style={ButtonStyles.button}
+                        style={styles.pageButtons}
                         onPress={goToNextPage}
                     >
-                        <Text>Next Page</Text>
+                        <Text style={styles.text}>Next Page</Text>
                     </TouchableOpacity>
                 ) : (
                     <TouchableOpacity
-                        style={[ButtonStyles.button, { backgroundColor: "lightblue" }]}
+                        style={styles.pageButtons}
                         onPress={() => router.replace("/pages/HomePage")}
                     >
-                        <Text style={ButtonStyles.text}>Home</Text>
+                        <Text style={styles.text}>Next Mission</Text>
                     </TouchableOpacity>
                 )}
             </View>
@@ -63,4 +63,4 @@ const CheckGlucoseSection: React.FC = () => {
     );
 };
 
-export default CheckGlucoseSection;
+export default CheckInsulin;

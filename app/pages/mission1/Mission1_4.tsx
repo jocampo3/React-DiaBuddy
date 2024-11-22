@@ -6,25 +6,25 @@ import buttonStyles from "@/assets/styles/buttonStyles";
 // Get the window dimensions
 const { width, height } = Dimensions.get("window");
 
-export default function AboutPage3() {
+export default function Mission1_4() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Your Special Mission</Text>
+      <Text style={styles.title}>BOOM! We are DiaBuddies Superheroes!</Text>
 
       <Text style={styles.bodyText}>
-        But sometimes, some kids like us have a little challenge or extra mission to accomplish, so we must get very special equipment to save us all.
+        But guess what? We are the DiaBuddies superheroes, and we know how to handle it like pros! 💥
       </Text>
 
       <Text style={styles.bodyText}>
-        Our body might not make enough of this hormone (the car) called insulin, so it's like we are missing the transportation to go to other organs (buildings) to complete our super mission and regulate the sugar we eat. That's what we call type 1 diabetes.
+        We have special equipment, like insulin injectors or pumps, that helps us get the power we need to complete every mission we have to confront. 💪✨
       </Text>
-
+{/* 
       <TouchableOpacity
         style={buttonStyles.pageButtons}
-        onPress={() => router.push("/pages/WhatIsType1Diabetes")}
+        onPress={() => router.push("/pages/NextPage")}
       >
-        <Text style={styles.text}>Learn More About Type 1 Diabetes</Text>
-      </TouchableOpacity>
+        <Text style={buttonStyles.text}>Next Mission</Text>
+      </TouchableOpacity> */}
     </View>
   );
 }
@@ -35,11 +35,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#f5f5f5',
-    marginTop: 50,
     padding: 20,
-  },
-  text: {
-    color: "black"
+    marginTop: 50
   },
   title: {
     fontSize: height * 0.05,  // Dynamic size based on screen height
