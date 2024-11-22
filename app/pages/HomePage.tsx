@@ -32,25 +32,25 @@ export default function HomePage() {
             </TouchableOpacity>
             <TouchableOpacity
                 style={[styles.buttonStyle1, { backgroundColor: "yellow" }]}
-                onPress={() => router.replace("/pages/about/AboutSection")}
+                onPress={() => router.replace("/pages/mission1/MissionSections")}
             >
                 <Text style={[styles.text, { color: "black" }]}>{t("HPB1") || 'Default HPB1'}</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={[styles.buttonStyle2, { backgroundColor: "orange" }]}
-                onPress={() => router.replace("/pages/checkglucose/CheckGlucoseSection")}
+                onPress={() => router.replace("/pages/mission2/MissionSections")}
             >
                 <Text style={styles.text}>{t("HPB2") || 'Default HPB2'}</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={[styles.buttonStyle1, { backgroundColor: "lightblue" }]}
-                onPress={() => router.replace("/pages/checkinsulin/CheckInsulinSection")}
+                onPress={() => router.replace("/pages/mission3/MissionSections")}
             >
                 <Text style={styles.text}>{t("HPB3") || 'Default HPB3'}</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={[styles.buttonStyle2, { backgroundColor: "magenta" }]}
-                onPress={() => router.replace("/pages/food/FoodSection")}
+                onPress={() => router.replace("/pages/mission4/MissionSections")}
             >
                 <Text style={styles.text}>{t("HPB4") || 'Default HPB4'}</Text>
             </TouchableOpacity>

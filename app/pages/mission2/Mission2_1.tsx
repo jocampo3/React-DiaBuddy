@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   bodyText: {
-    fontSize: height * 0.03, // Dynamic font size for better readability
+    fontSize: height * 0.025, // Dynamic font size for better readability
     color: '#555',
     textAlign: 'center',
     marginBottom: 20,
@@ -55,8 +55,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    width: width * 0.7, // Image width scales with screen size
-    height: height * 0.2, // Image height scales with screen size
+    width: width * 0.8, // Image width scales with screen size
+    height: height * 0.3, // Image height scales with screen size
     resizeMode: 'contain',
     marginBottom: 10,
   },

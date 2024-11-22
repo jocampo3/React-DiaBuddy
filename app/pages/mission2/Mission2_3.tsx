@@ -43,12 +43,14 @@ const styles = StyleSheet.create({
       paddingHorizontal: width * 0.05,
     },
     stepContainer: {
-      marginBottom: 20,
-      alignItems: 'center',
+      flex: 1, // Ensures this component occupies the vertical space
+      justifyContent: 'center', // Centers content vertically
+      alignItems: 'center', // Centers content horizontally
+      backgroundColor: '#f5f5f5',
     },
     image: {
       width: width * 0.7, // Image width scales with screen size
-      height: height * 0.2, // Image height scales with screen size
+      height: height * 0.35, // Image height scales with screen size
       resizeMode: 'contain',
       marginBottom: 10,
     },

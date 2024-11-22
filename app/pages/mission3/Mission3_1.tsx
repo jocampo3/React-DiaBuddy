@@ -1,26 +1,31 @@
 import * as React from 'react';
 import { TouchableOpacity, View, Text, StyleSheet, Image, Dimensions } from 'react-native';
 import { router } from "expo-router";
-// import styles from "@/assets/styles/buttonStyles";
+import buttonStyles from "@/assets/styles/buttonStyles";
 
 // Get the window dimensions
 const { width, height } = Dimensions.get("window");
 
+export default function CheckInsulinPage() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Oh boy, I need insulin!</Text>
 
-export default function CheckGlucosePage2() {
-    return (
-      <View style={styles.stepContainer}>
-        <Image
-          source={require('@/assets/images/DiaBuddyHeros/step2.webp')} // Replace with actual image URL
-          style={styles.image}
-        />
-        <Text style={styles.stepText}>
-          Step 2: Use your glucose meter or sensor to check your levels. It's quick and easy—like using superhero gadgets!
-        </Text>
-      </View>
-    )
+      <Text style={styles.bodyText}>
+        No worries! You’re a DiaBuddy superhero, and your special equipment will help you stay strong. 💪
+      </Text>
+
+      <Image
+        source={require('@/assets/images/DiaBuddyHeros/step1.webp')}
+        style={styles.image}
+      />
+
+      <Text style={styles.bodyText}>
+        Step 1: Wash your hands to keep everything clean and safe! 🧼🖐️
+      </Text>
+    </View>
+  );
 }
-
 
 const styles = StyleSheet.create({
     container: {
@@ -50,7 +55,7 @@ const styles = StyleSheet.create({
     },
     image: {
       width: width * 0.7, // Image width scales with screen size
-      height: height * 0.2, // Image height scales with screen size
+      height: height * 0.3, // Image height scales with screen size
       resizeMode: 'contain',
       marginBottom: 10,
     },

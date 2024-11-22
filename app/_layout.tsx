@@ -16,39 +16,23 @@ export default function RootLayout() {
           options={{ headerShown: false }} // Hides the header for this screen
         />
         <Stack.Screen 
-          name="pages/about/AboutPage"
-          options={{ headerShown: false }} // Hides the header for this screen
-        />
-        <Stack.Screen 
-          name="pages/checkinsulin/CheckInsulinPage"
-          options={{ headerShown: false }} // Hides the header for this screen
-        />
-        <Stack.Screen 
-          name="pages/checkglucose/CheckGlucosePage"
-          options={{ headerShown: false }} // Hides the header for this screen
-        />
-        <Stack.Screen 
-          name="pages/recordglucose/RecordGlucosePage"
-          options={{ headerShown: false }} // Hides the header for this screen
-        />
-        <Stack.Screen 
           name="pages/food/FoodPage"
           options={{ headerShown: false }} // Hides the header for this screen
         />
         <Stack.Screen
-          name="pages/about/AboutSection"
+          name="pages/mission1/MissionSections"
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="pages/checkglucose/CheckGlucoseSection"
+          name="pages/mission2/MissionSections"
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="pages/checkinsulin/CheckInsulinSection"
+          name="pages/mission3/MissionSections"
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="pages/food/FoodSection"
+          name="pages/mission4/MissionSections"
           options={{ headerShown: false }}
         />
     </Stack>

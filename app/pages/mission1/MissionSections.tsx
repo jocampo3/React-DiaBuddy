@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { View, Text, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
-import AboutPage from './AboutPage';
-import AboutPage2 from './AboutPage2';
-import AboutPage3 from './AboutPage3';
-import AboutPage4 from './AboutPage4';
+import Mission1_ from './Mission1_1';
+import Mission1_2 from './Mission1_2';
+import Mission1_3 from './Mission1_3';
+import Mission1_4 from './Mission1_4';
 import { useFonts } from 'expo-font';
 import styles from "@/assets/styles/SectionStyles/buttonStyles";
 
 // Array of pages for dynamic navigation
-const pages = [AboutPage, AboutPage2, AboutPage3, AboutPage4];
+const pages = [Mission1_, Mission1_2, Mission1_3, Mission1_4];
 
-const AboutSection: React.FC = () => {
+const Mission1_sections: React.FC = () => {
     const [fontsLoaded] = useFonts({
         'Bangers-Regular': require('@/assets/fonts/Bangers/Bangers-Regular.ttf'),
     });
@@ -66,4 +66,4 @@ const AboutSection: React.FC = () => {
     );
 };
 
-export default AboutSection;
+export default Mission1_sections;
