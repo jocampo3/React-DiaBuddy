@@ -1,28 +1,29 @@
 import * as React from 'react';
 import { TouchableOpacity, View, Text, StyleSheet, Image, Dimensions } from 'react-native';
-import { router } from "expo-router";
-import buttonStyles from "@/assets/styles/buttonStyles";
+import { useTranslation } from 'react-i18next';
+import i18n from '@/components/i18n';
 
 // Get the window dimensions
 const { width, height } = Dimensions.get("window");
 
 export default function CheckGlucosePage() {
+  const { t } = useTranslation();
+
+  const changeLanguage = (lng: string) => {
+      i18n.changeLanguage(lng);
+  };
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Superhero Glucose Check!</Text>
+      <Text style={styles.title}>{t("M2.Title")}</Text>
 
-      <Text style={styles.bodyText}>
-        Every superhero needs to check their energy levels, and for DiaBuddy superheroes, that means checking your glucose levels! Here's how:
-      </Text>
+      <Text style={styles.bodyText}>{t("M2.P1.1")}</Text>
 
       <View style={styles.stepContainer}>
         <Image
           source={require('@/assets/images/DiaBuddyHeros/step1.webp')} // Replace with actual image URL
           style={styles.image}
         />
-        <Text style={styles.stepText}>
-          Step 1: Wash your hands with soap and water. Clean hands are important for getting the right reading!
-        </Text>
+        <Text style={styles.stepText}>{t("M2.Step1")}</Text>
       </View>
     </View>
   );
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   title: {
-    fontSize: height * 0.05, // Dynamic font size based on screen height
+    fontSize: height * 0.045, // Dynamic font size based on screen height
     fontWeight: 'bold',
     color: '#FF5733',
     textAlign: 'center',
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: width * 0.05,
   },
   stepContainer: {
-    marginBottom: 20,
+    // marginBottom: 20,
     alignItems: 'center',
   },
   image: {

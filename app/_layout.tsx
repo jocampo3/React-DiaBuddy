@@ -15,10 +15,6 @@ export default function RootLayout() {
           name="pages/SelectLangPage"
           options={{ headerShown: false }} // Hides the header for this screen
         />
-        <Stack.Screen 
-          name="pages/food/FoodPage"
-          options={{ headerShown: false }} // Hides the header for this screen
-        />
         <Stack.Screen
           name="pages/mission1/MissionSections"
           options={{ headerShown: false }}

@@ -1,30 +1,32 @@
 import React from "react";
 import { TouchableOpacity, View, Text, StyleSheet, Dimensions } from "react-native";
+import i18n from "@/components/i18n";
+import { useTranslation } from "react-i18next";
 
 const { width, height } = Dimensions.get("window");
 
 export default function FoodPage2() {
+    const { t } = useTranslation();
+    const changeLanguage = (lng: string) => {
+        i18n.changeLanguage(lng);
+    };
     return (
         <View style={styles.container}>
-            <Text style={styles.headerText}>The Superhero Food Pyramid</Text>
-            <Text style={styles.bodyText}>
-                Here's the food pyramid showing good and not-so-good choices! Tap on a section to learn more.
-            </Text>
+            <Text style={styles.headerText}>{t("M4.Title2")}</Text>
+            <Text style={styles.bodyText}>{t("M4.P2.1")}</Text>
 
             <View style={styles.pyramidContainer}>
                 <TouchableOpacity style={[styles.pyramidTier, styles.topTier]}>
-                    <Text style={styles.tierText}>Proteins: Chicken, Eggs, Fish</Text>
+                    <Text style={styles.tierText}>{t("M4.Proteins")}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={[styles.pyramidTier, styles.middleTier]}>
-                    <Text style={styles.tierText}>Fruits & Veggies: Apples, Carrots, Spinach</Text>
+                    <Text style={styles.tierText}>{t("M4.Fruits & Veggies")}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={[styles.pyramidTier, styles.bottomTier]}>
-                    <Text style={styles.tierText}>
-                        Whole Grains: Rice, Bread | Dairy: Milk, Yogurt
-                    </Text>
+                    <Text style={styles.tierText}>{t("M4.Whole Grains")}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={[styles.pyramidTier, styles.baseTier]}>
-                    <Text style={styles.tierText}>Limit: Soda, Candy, Chips</Text>
+                    <Text style={styles.tierText}>{t("M4.Limit")}</Text>
                 </TouchableOpacity>
             </View>
         </View>

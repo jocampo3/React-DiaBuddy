@@ -1,21 +1,24 @@
 import * as React from 'react';
 import { TouchableOpacity, View, Text, StyleSheet, Image, Dimensions } from 'react-native';
-import { router } from "expo-router";
-import buttonStyles from "@/assets/styles/buttonStyles";
-
+import { useTranslation } from 'react-i18next';
+import i18n from '@/components/i18n';
 // Get the window dimensions
 const { width, height } = Dimensions.get("window");
 
 export default function CheckInsulinPage2() {
+  const { t } = useTranslation();
+
+  const changeLanguage = (lng: string) => {
+      i18n.changeLanguage(lng);
+  };
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Insulin Superhero Guide</Text>
+      <Text style={styles.title}>{t("M3.Title2")}</Text>
 
       {/* Step 2: Using the injector */}
       <View style={styles.stepContainer}>
-        <Text style={styles.bodyText}>
-          Step 2: Use your insulin injector or pump. Insert the needle gently into your arm or tummy (just like a superhero activating their powers). 🚀
-        </Text>
+        <Text style={styles.bodyText}>{t("M3.Step2")}</Text>
+
         <Image
           source={require('@/assets/images/InsulinInjection/InsulinInjection.webp')}
           style={styles.image}
@@ -24,9 +27,8 @@ export default function CheckInsulinPage2() {
 
       {/* Step 3: Delivering the insulin */}
       <View style={styles.stepContainer}>
-        <Text style={styles.bodyText}>
-          Step 3: Press the button or push the injector. That’s it! Your insulin is delivered, and you're ready to go! 💪
-        </Text>
+        <Text style={styles.bodyText}>{t("M3.Step3")}</Text>
+
       </View>
     </View>
   );

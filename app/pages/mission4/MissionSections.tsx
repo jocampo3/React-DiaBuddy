@@ -7,7 +7,7 @@ import FoodPage3 from "./Mission4_3";
 import styles from "@/assets/styles/SectionStyles/buttonStyles";
 
 // Array of pages for dynamic navigation
-const pages = [FoodPage, FoodPage2, FoodPage3];
+const pages = [FoodPage, FoodPage2];
 
 const FoodSection: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(0);

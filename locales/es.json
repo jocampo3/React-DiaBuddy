@@ -10,5 +10,65 @@
   "time": "Horario",
   "backHome": "Regresar al Inicio",
   "notif": "Notificaciones",
-  "pin": "Codigo"
+  "pin": "Codigo",
+  "M1": {
+    "Title": "Misión 1: ¡Descubre la Diabetes Tipo 1!",
+    "P1.1": "¡Hola, pequeñín! Hablemos de algo súper genial, ¡como los superhéroes!",
+    "P1.2": "¿Sabías que los superhéroes tienen poderes, valentía, coraje, amabilidad y equipos muy especiales que los ayudan a salvar el día?",
+    "P1.3": "Al igual que los superhéroes, las personas con Diabetes Tipo 1 tienen equipos especiales (como una bomba o una pluma) y necesitan revisar su nivel de azúcar en sangre regularmente para mantenerse saludables y fuertes.",    
+    "Title2": "¡Eres un superhéroe DiaBuddy!",
+    "P2.1": "¡Pensemos en tu cuerpo como una ciudad de superhéroes! 🏙️",
+    "P2.2": "Imagina que tus órganos son los edificios, tus vasos sanguíneos son las carreteras, y tus hormonas, como la insulina, son los autos que recorren la ciudad, ¡entregando energía! 🚗💨",
+    "P2.3": "La insulina (el auto superhéroe) ayuda a tu cuerpo a usar la energía de los alimentos para darte fuerza. ¡Así como un superhéroe usa sus poderes especiales para hacer cosas increíbles, la insulina te da la energía que necesitas para jugar, aprender y divertirte! 💪✨",
+    "Title3": "Tu Misión Especial",
+    "P3.1": "Pero a veces, algunos niños como nosotros tienen un pequeño desafío o una misión extra que cumplir, así que necesitamos equipos muy especiales para salvarnos a todos.",
+    "P3.2": "Nuestro cuerpo podría no producir suficiente de esta hormona (el auto) llamada insulina, así que es como si nos faltara el transporte para llegar a otros órganos (edificios) y completar nuestra súper misión y regular el azúcar que comemos. Eso es lo que llamamos diabetes tipo 1.",
+    "Title4": "¡BOOM! ¡Somos superhéroes DiaBuddies!",
+    "P4.1": "¿Y sabes qué? ¡Somos los superhéroes DiaBuddies, y sabemos cómo manejarlo como expertos! 💥",
+    "P4.2": "Tenemos equipos especiales, como inyectores de insulina o bombas, que nos ayudan a obtener la energía que necesitamos para completar cada misión que enfrentamos. 💪✨"
+  },
+  "M2": {
+    "Title": "¡Revisión de Glucosa de Superhéroes!",
+    "P1.1": "Todo superhéroe necesita revisar sus niveles de energía, ¡y para los superhéroes DiaBuddy, eso significa revisar tus niveles de glucosa! Así es como se hace:",
+    "Step1": "Paso 1: Lávate las manos con agua y jabón. ¡Tener las manos limpias es importante para obtener una lectura correcta!",
+    "Step2": "Paso 2: Usa tu medidor de glucosa o sensor para revisar tus niveles. ¡Es rápido y fácil, como usar los gadgets de un superhéroe!",
+    "Step3": "Paso 3: Registra tus niveles. ¡Conocer tu nivel de glucosa es tu superpoder para mantenerte lleno de energía!"
+  },
+  "M3": {
+    "Title": "¡Oh no, necesito insulina!",
+    "P1.1": "¡No te preocupes! Eres un superhéroe DiaBuddy, y tu equipo especial te ayudará a mantenerte fuerte. 💪",
+    "Step1": "Paso 1: Lávate las manos para mantener todo limpio y seguro! 🧼🖐️",
+    "Title2": "Guía del Superhéroe de la Insulina",
+    "Step2": "Paso 2: Usa tu inyector de insulina o bomba. Inserta la aguja suavemente en tu brazo o pancita (como un superhéroe activando sus poderes). 🚀",
+    "Step3": "Paso 3: Presiona el botón o empuja el inyector. ¡Eso es todo! Tu insulina ha sido entregada, ¡y estás listo para seguir! 💪"
+  },
+  "M4": {
+    "Title": "¡Elecciones de Superhéroes: Alimenta tu poder!",
+    "Body": "Toca cada comida para decidir si es \"Buena\" o \"No Buena\" para un superhéroe como tú!",
+    "FoodItems": [
+      { "name": "Manzana", "type": "good" },
+      { "name": "Barra de Chocolate", "type": "not good" },
+      { "name": "Zanahorias", "type": "good" },
+      { "name": "Refresco", "type": "not good" },
+      { "name": "Pollo a la Parrilla", "type": "good" },
+      { "name": "Papas Fritas", "type": "not good" }
+    ],
+    "ChoiceButtons": {
+      "Good": "Buena",
+      "NotGood": "No Buena"
+    },
+    "CheckAnswers": "Comprobar Respuestas",
+    "Correct": "Elecciones Correctas",
+    "Incorrect": "Elecciones Incorrectas",
+    "Results": "Resultos",
+    "TryAgainButton": "Reintentar",
+    "Congratulations": "¡Felicidades!",
+    "AllCorrect": "¡Todas las respuestas son correctas!",
+    "Title2": "La Pirámide de Alimentos de Superhéroes",
+    "P2.1": "¡Aquí está la pirámide de alimentos que muestra las elecciones buenas y no tan buenas! Toca una sección para aprender más.",
+    "Proteins": "Proteínas: Pollo, Huevos, Pescado",
+    "Fruits & Veggies": "Frutas y Verduras: Manzanas, Zanahorias, Espinacas",
+    "Whole Grains": "Granos Enteros: Arroz, Pan | Lácteos: Leche, Yogur",
+    "Limit": "Limitar: Refrescos, Dulces, Papas Fritas"
+  }
 }
