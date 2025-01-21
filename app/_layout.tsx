@@ -31,6 +31,10 @@ export default function RootLayout() {
           name="pages/mission4/MissionSections"
           options={{ headerShown: false }}
         />
+        <Stack.Screen
+          name="pages/recordglucose/RecordGlucosePage"
+          options={{ headerShown: false }}
+        />
     </Stack>
   );
 }

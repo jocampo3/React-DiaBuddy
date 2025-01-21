@@ -70,5 +70,15 @@
     "Fruits & Veggies": "Fruits & Veggies: Apples, Carrots, Spinach",
     "Whole Grains": "Whole Grains: Rice, Bread | Dairy: Milk, Yogurt",
     "Limit": "Limit: Soda, Candy, Chips"
-  }
+  },
+  "RecordLevels": "Record My Glucose Levels",
+  "Breakfast": "Breakfast",
+  "Lunch": "Lunch",
+  "Dinner": "Dinner",
+  "Bedtime": "Bedtime",
+  "Notes": "Notes",
+  "Save": "Record",
+  "Logs": "Saved Logs",
+  "Edit": "Edit",
+  "Delete": "Delete"
 }

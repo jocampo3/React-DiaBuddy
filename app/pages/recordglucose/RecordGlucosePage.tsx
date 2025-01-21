@@ -4,6 +4,8 @@ import { TouchableOpacity, View, Text, TextInput, StyleSheet, FlatList, SafeArea
 import { router } from "expo-router";
 import buttonStyles from "@/assets/styles/buttonStyles";
 import { dbSave, dbRetrieve, dbUpdate, dbDelete, GlucoseLog } from "@/app/database";
+import { useTranslation } from 'react-i18next';
+import i18n from '@/components/i18n';
 
 const handleSave = async (
     breakfast: string,
@@ -57,28 +59,38 @@ export default function RecordGlucosePage(): JSX.Element {
         setEditId(log.id || null);
     };
 
+    const { t } = useTranslation();
+
+    const changeLanguage = (lng: string) => {
+        i18n.changeLanguage(lng);
+    };
+
+    const goHome = () => {
+        router.replace("/pages/HomePage");
+    };
+
     const renderLogItem = ({ item }: { item: GlucoseLog }) => (
         <View style={styles.logItem}>
             <Text style={styles.logDate}>Date: {item.datereading}</Text>
             <View style={styles.logReadings}>
-                <Text>Breakfast: {item.breakfast}</Text>
-                <Text>Lunch: {item.lunch}</Text>
-                <Text>Dinner: {item.dinner}</Text>
-                <Text>Bedtime: {item.bedtime}</Text>
+                <Text>{t('Breakfast')} {item.breakfast}</Text>
+                <Text>{t('Lunch')} {item.lunch}</Text>
+                <Text>{t('Dinner')} {item.dinner}</Text>
+                <Text>{t('Bedtime')} {item.bedtime}</Text>
             </View>
-            {item.notes && <Text style={styles.logNotes}>Notes: {item.notes}</Text>}
+            {item.notes && <Text style={styles.logNotes}>{t('Notes')}: {item.notes}</Text>}
             <View style={styles.buttonRow}>
                 <TouchableOpacity
                     style={[styles.actionButton, styles.editButton]}
                     onPress={() => handleEdit(item)}
                 >
-                    <Text style={styles.actionButtonText}>Edit</Text>
+                    <Text style={styles.actionButtonText}>{t("Edit")}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={[styles.actionButton, styles.deleteButton]}
                     onPress={() => handleDelete(item.id!)}
                 >
-                    <Text style={styles.actionButtonText}>Delete</Text>
+                    <Text style={styles.actionButtonText}>{t("Delete")}</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -87,38 +99,49 @@ export default function RecordGlucosePage(): JSX.Element {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.inputSection}>
-                <Text style={styles.title}>Record my glucose levels</Text>
+                <TouchableOpacity
+                    style={[buttonStyles.button, { backgroundColor: "orange", marginBottom: 20, width: '50%', alignSelf: 'center' }]}
+                    onPress={goHome}
+                >
+                    <Text style={{ color: 'white', fontWeight: 'bold', margin: "auto" }}>{t("backHome")}</Text>
+                </TouchableOpacity>
+                <Text style={styles.title}>{t("RecordLevels")}</Text>
                 <TextInput
                     style={styles.input}
-                    placeholder="Breakfast"
+                    placeholder={t('Breakfast')}
+                    placeholderTextColor="#333" 
                     keyboardType="numeric"
                     value={breakfast}
                     onChangeText={setBreakfast}
                 />
                 <TextInput
                     style={styles.input}
-                    placeholder="Lunch"
+                    placeholder={t("Lunch")}
+                    placeholderTextColor="#333" 
                     keyboardType="numeric"
                     value={lunch}
                     onChangeText={setLunch}
                 />
                 <TextInput
                     style={styles.input}
-                    placeholder="Dinner"
+                    placeholder={t("Dinner")}
+                    placeholderTextColor="#333" 
                     keyboardType="numeric"
                     value={dinner}
                     onChangeText={setDinner}
                 />
                 <TextInput
                     style={styles.input}
-                    placeholder="Bedtime"
+                    placeholder={t("Bedtime")}
+                    placeholderTextColor="#333" 
                     keyboardType="numeric"
                     value={bedtime}
                     onChangeText={setBedtime}
                 />
                 <TextInput
                     style={[styles.input, styles.notesInput]}
-                    placeholder="Notes"
+                    placeholder={t("Notes")}
+                    placeholderTextColor="#333" 
                     multiline
                     value={notes}
                     onChangeText={setNotes}
@@ -132,7 +155,7 @@ export default function RecordGlucosePage(): JSX.Element {
             </View>
 
             <View style={styles.logsSection}>
-                <Text style={styles.logHeader}>Saved Logs:</Text>
+                <Text style={styles.logHeader}>{t("Logs")}</Text>
                 <FlatList
                     data={savedLogs}
                     renderItem={renderLogItem}

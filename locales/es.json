@@ -70,5 +70,15 @@
     "Fruits & Veggies": "Frutas y Verduras: Manzanas, Zanahorias, Espinacas",
     "Whole Grains": "Granos Enteros: Arroz, Pan | Lácteos: Leche, Yogur",
     "Limit": "Limitar: Refrescos, Dulces, Papas Fritas"
-  }
+  },
+  "RecordLevels": "Registrar mis niveles de glucosa",
+  "Breakfast": "Desayuno",
+  "Lunch": "Almuerzo",
+  "Dinner": "Cena",
+  "Bedtime": "Hora de dormir",
+  "Notes": "Notas",
+  "Save": "Guardar",
+  "Logs": "Registros guardados",
+  "Edit": "Editar",
+  "Delete": "Quitar"
 }
