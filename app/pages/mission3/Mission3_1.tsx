@@ -1,28 +1,28 @@
 import * as React from 'react';
 import { TouchableOpacity, View, Text, StyleSheet, Image, Dimensions } from 'react-native';
-import { router } from "expo-router";
-import buttonStyles from "@/assets/styles/buttonStyles";
-
+import { useTranslation } from 'react-i18next';
+import i18n from '@/components/i18n';
 // Get the window dimensions
 const { width, height } = Dimensions.get("window");
 
 export default function CheckInsulinPage() {
+  const { t } = useTranslation();
+
+  const changeLanguage = (lng: string) => {
+      i18n.changeLanguage(lng);
+  };
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Oh boy, I need insulin!</Text>
+      <Text style={styles.title}>{t("M3.Title")}</Text>
 
-      <Text style={styles.bodyText}>
-        No worries! You’re a DiaBuddy superhero, and your special equipment will help you stay strong. 💪
-      </Text>
+      <Text style={styles.bodyText}>{t("M3.P1.1")}</Text>
 
       <Image
         source={require('@/assets/images/DiaBuddyHeros/step1.webp')}
         style={styles.image}
       />
 
-      <Text style={styles.bodyText}>
-        Step 1: Wash your hands to keep everything clean and safe! 🧼🖐️
-      </Text>
+      <Text style={styles.bodyText}>{t("M3.Step1")}</Text>
     </View>
   );
 }

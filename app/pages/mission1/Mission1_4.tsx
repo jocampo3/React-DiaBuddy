@@ -1,30 +1,24 @@
 import * as React from 'react';
-import { TouchableOpacity, View, Text, StyleSheet, Dimensions } from 'react-native';
-import { router } from "expo-router";
-import buttonStyles from "@/assets/styles/buttonStyles";
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { useTranslation } from 'react-i18next';
+import i18n from "@/components/i18n";
 
 // Get the window dimensions
 const { width, height } = Dimensions.get("window");
 
 export default function Mission1_4() {
+  const { t } = useTranslation();
+
+  const changeLanguage = (lng: string) => {
+      i18n.changeLanguage(lng);
+  };
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>BOOM! We are DiaBuddies Superheroes!</Text>
+      <Text style={styles.title}>{t("M1.Title4")}</Text>
 
-      <Text style={styles.bodyText}>
-        But guess what? We are the DiaBuddies superheroes, and we know how to handle it like pros! 💥
-      </Text>
+      <Text style={styles.bodyText}>{t("M1.P4.1")}</Text>
 
-      <Text style={styles.bodyText}>
-        We have special equipment, like insulin injectors or pumps, that helps us get the power we need to complete every mission we have to confront. 💪✨
-      </Text>
-{/* 
-      <TouchableOpacity
-        style={buttonStyles.pageButtons}
-        onPress={() => router.push("/pages/NextPage")}
-      >
-        <Text style={buttonStyles.text}>Next Mission</Text>
-      </TouchableOpacity> */}
+      <Text style={styles.bodyText}>{t("M1.P4.2")}</Text>
     </View>
   );
 }

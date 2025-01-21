@@ -10,5 +10,75 @@
   "time": "Time",
   "backHome": "Back to home",
   "notif": "Notifications",
-  "pin": "Pin"
+  "pin": "Pin",
+  "M1": {
+    "Title": "Mission 1: Unmask Type 1 Diabetes!",
+    "P1.1": "Hey kiddo, let's talk about something super cool like superheroes!",
+    "P1.2": "You know, superheroes have powers, courage, bravery, kindness, and very special equipment that help them save the day.",
+    "P1.3": "Just like superheroes, people with Type 1 Diabetes have special equipment (like a pump or a pen) and they need to check their blood sugar regularly to stay healthy and strong!",
+    "Title2": "You're a DiaBuddy Superhero!",
+    "P2.1": "Let's think of your body as a superhero city! 🏙️",
+    "P2.2": "Imagine that your organs are the buildings, your blood vessels are the roads, and your hormones, like insulin, are the cars zooming through the city, delivering energy! 🚗💨",
+    "P2.3": "Insulin (the superhero car) helps your body use the energy from food to power you up! Just like a superhero uses their special powers to do amazing things, insulin gives you the energy you need to play, learn, and have fun! 💪✨",
+    "Title3": "Your Special Mission",
+    "P3.1": "But sometimes, some kids like us have a little challenge or extra mission to accomplish, so we must get very special equipment to save us all.",
+    "P3.2": "Our body might not make enough of this hormone (the car) called insulin, so it's like we are missing the transportation to go to other organs (buildings) to complete our super mission and regulate the sugar we eat. That's what we call type 1 diabetes.",
+    "Title4": "BOOM! We are DiaBuddies Superheroes!",
+    "P4.1": "But guess what? We are the DiaBuddies superheroes, and we know how to handle it like pros! 💥",
+    "P4.2": "We have special equipment, like insulin injectors or pumps, that helps us get the power we need to complete every mission we have to confront. 💪✨"
+  },
+  "M2": {
+    "Title": "Superhero Glucose Check!",
+    "P1.1": "Every superhero needs to check their energy levels, and for DiaBuddy superheroes, that means checking your glucose levels! Here's how:",
+    "Step1": "Step 1: Wash your hands with soap and water. Clean hands are important for getting the right reading!",
+    "Step2": "Step 2: Use your glucose meter or sensor to check your levels. It's quick and easy—like using superhero gadgets!",
+    "Step3": "Step 3: Record your levels. Knowing your glucose level is your superpower to stay energized!"
+  },
+  "M3": {
+    "Title": "Oh boy, I need insulin!",
+    "P1.1": "No worries! You’re a DiaBuddy superhero, and your special equipment will help you stay strong. 💪",
+    "Step1": "Step 1: Wash your hands to keep everything clean and safe! 🧼🖐️",
+    "Title2": "Insulin Superhero Guide",
+    "Step2": "Step 2: Use your insulin injector or pump. Insert the needle gently into your arm or tummy (just like a superhero activating their powers). 🚀",
+    "Step3": "Step 3: Press the button or push the injector. That’s it! Your insulin is delivered, and you're ready to go! 💪"
+  },
+  "M4": {
+    "Title": "Superhero Choices: Fuel Your Power!",
+    "Body": "Tap on each food to decide if it's \"Good\" or \"Not Good\" for a superhero like you!",
+    "FoodItems": [
+      { "name": "Apple", "type": "good" },
+      { "name": "Candy Bar", "type": "not good" },
+      { "name": "Carrots", "type": "good" },
+      { "name": "Soda", "type": "not good" },
+      { "name": "Grilled Chicken", "type": "good" },
+      { "name": "Chips", "type": "not good" }
+    ],
+    "ChoiceButtons": {
+      "Good": "Good",
+      "NotGood": "Not Good"
+    },
+    "CheckAnswers": "Check Answers",
+    "Correct": "Correct Choices",
+    "Incorrect": "Incorrect Choices",
+    "Results": "Results",
+    "TryAgainButton": "Retry",
+    "Congratulations": "Congratulations",
+    "AllCorrect": "Answers are correct!",
+    "Title2": "The Supehero Food Pyramid",
+    "P2.1": "Here's the food pyramid showing good and not-so-good choices! Tap on a section to learn more.",
+    "Proteins": "Proteins: Chicken, Eggs, Fish",
+    "Fruits & Veggies": "Fruits & Veggies: Apples, Carrots, Spinach",
+    "Whole Grains": "Whole Grains: Rice, Bread | Dairy: Milk, Yogurt",
+    "Limit": "Limit: Soda, Candy, Chips"
+  },
+  "RecordLevels": "Record My Glucose Levels",
+  "Breakfast": "Breakfast",
+  "Lunch": "Lunch",
+  "Dinner": "Dinner",
+  "Bedtime": "Bedtime",
+  "Notes": "Notes",
+  "Save": "Record",
+  "Logs": "Saved Logs",
+  "Edit": "Edit",
+  "Delete": "Delete"
 }

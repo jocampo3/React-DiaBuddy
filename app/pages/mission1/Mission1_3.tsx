@@ -1,23 +1,25 @@
 import * as React from 'react';
-import { TouchableOpacity, View, Text, StyleSheet, Dimensions } from 'react-native';
-import { router } from "expo-router";
-import buttonStyles from "@/assets/styles/buttonStyles";
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { useTranslation } from 'react-i18next';
+import i18n from "@/components/i18n";
 
 // Get the window dimensions
 const { width, height } = Dimensions.get("window");
 
 export default function Mission1_3() {
+  const { t } = useTranslation();
+
+  const changeLanguage = (lng: string) => {
+      i18n.changeLanguage(lng);
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Your Special Mission</Text>
+      <Text style={styles.title}>{t("M1.Title3")}</Text>
 
-      <Text style={styles.bodyText}>
-        But sometimes, some kids like us have a little challenge or extra mission to accomplish, so we must get very special equipment to save us all.
-      </Text>
+      <Text style={styles.bodyText}>{t("M1.P3.1")}</Text>
 
-      <Text style={styles.bodyText}>
-        Our body might not make enough of this hormone (the car) called insulin, so it's like we are missing the transportation to go to other organs (buildings) to complete our super mission and regulate the sugar we eat. That's what we call type 1 diabetes.
-      </Text>
+      <Text style={styles.bodyText}>{t("M1.P3.2")}</Text>
 
       {/* <TouchableOpacity
         style={buttonStyles.pageButtons}

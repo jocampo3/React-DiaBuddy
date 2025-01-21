@@ -1,21 +1,24 @@
 import * as React from 'react';
 import { TouchableOpacity, View, Text, StyleSheet, Dimensions, Image } from 'react-native';
-import { router } from "expo-router";
-import buttonStyles from "@/assets/styles/buttonStyles";
+import { useTranslation } from 'react-i18next';
+import i18n from '@/components/i18n';
 
 // Get the window dimensions
 const { width, height } = Dimensions.get("window");
 
 export default function CheckGlucosePage3() {
+  const { t } = useTranslation();
+
+  const changeLanguage = (lng: string) => {
+      i18n.changeLanguage(lng);
+  };
     return (
         <View style={styles.stepContainer}>
         <Image
           source={require('@/assets/images/DiaBuddyHeros/step3.png')} // Replace with actual image URL
           style={styles.image}
         />
-        <Text style={styles.stepText}>
-          Step 3: Record your levels. Knowing your glucose level is your superpower to stay energized!
-        </Text>
+        <Text style={styles.stepText}>{t("M2.Step3")}</Text>
       </View> 
     )
 }

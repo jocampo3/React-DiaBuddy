@@ -5,6 +5,8 @@ import { router } from "expo-router";
 import { useTranslation } from 'react-i18next';
 import i18n from '@/components/i18n'; 
 import { useFonts } from 'expo-font';
+import { setupDatabase } from './database';
+import { useEffect } from 'react';
 
 export default function Index() {
     const [fontsLoaded] = useFonts({
@@ -12,6 +14,11 @@ export default function Index() {
     });
 
     const { t } = useTranslation();
+
+    useEffect(() => {
+        console.log("setting up database");
+        setupDatabase();
+    }, []);
 
     // Early return while fonts are loading
     if (!fontsLoaded) {

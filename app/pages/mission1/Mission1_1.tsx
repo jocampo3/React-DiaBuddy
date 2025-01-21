@@ -1,25 +1,25 @@
 import * as React from 'react';
-import { TouchableOpacity, View, Text, StyleSheet, Image, Dimensions, ActivityIndicator } from 'react-native';
-import { router } from "expo-router";
+import { View, Text, Image} from 'react-native';
 import styles from "@/assets/styles/Mission1";
-import buttonStyles from '@/assets/styles/SectionStyles/buttonStyles';
+import i18n from "@/components/i18n";
+import { useTranslation } from "react-i18next";
 
 export default function Mission1_1() {
+  const { t } = useTranslation();
+
+    const changeLanguage = (lng: string) => {
+        i18n.changeLanguage(lng);
+    };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Why am I a DiaBuddy Superhero?</Text>
+      <Text style={styles.title}>{t("M1.Title")}</Text>
       
-      <Text style={styles.subtitle}>
-        Hey kiddo, let's talk about something super cool like superheroes!
-      </Text>
+      <Text style={styles.subtitle}>{t("M1.P1.1")}</Text>
       
-      <Text style={styles.bodyText}>
-        You know, superheroes have powers, courage, bravery, kindness, and very special equipment that help them save the day.
-      </Text>
+      <Text style={styles.bodyText}>{t("M1.P1.2")}</Text>
       
-      <Text style={styles.bodyText}>
-        Just like superheroes, people with Type 1 Diabetes have special equipment (like a pump or a pen) and they need to check their blood sugar regularly to stay healthy and strong!
-      </Text>
+      <Text style={styles.bodyText}>{t("M1.P1.3")}</Text>
       
       <Image // Replace with real image?
         source={{ uri: 'https://example.com/superhero-image.png' }} 
