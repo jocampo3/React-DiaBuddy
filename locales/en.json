@@ -80,5 +80,8 @@
   "Save": "Record",
   "Logs": "Saved Logs",
   "Edit": "Edit",
-  "Delete": "Delete"
+  "Delete": "Delete",
+  "LogCreated": "Log created successfully!",
+  "LogUpdated": "Log updated successfully!",
+  "LogDeleted": "Log deleted successfully!"
 }

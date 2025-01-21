@@ -7,32 +7,6 @@ import { dbSave, dbRetrieve, dbUpdate, dbDelete, GlucoseLog } from "@/app/databa
 import { useTranslation } from 'react-i18next';
 import i18n from '@/components/i18n';
 
-const handleSave = async (
-    breakfast: string,
-    lunch: string,
-    dinner: string,
-    bedtime: string,
-    notes: string,
-    id?: number
-): Promise<void> => {
-    if (id) {
-        await dbUpdate(id, breakfast, lunch, dinner, bedtime, notes);
-        Alert.alert("Success", "Log updated successfully!");
-    } else {
-        const savedId = await dbSave(breakfast, lunch, dinner, bedtime, notes);
-        if (savedId) {
-            console.log(`Log saved with ID: ${savedId}`);
-        }
-    }
-    router.replace("/pages/HomePage");
-};
-
-const handleDelete = async (id: number): Promise<void> => {
-    await dbDelete(id);
-    Alert.alert("Success", "Log deleted successfully!");
-    router.replace("/pages/HomePage");
-};
-
 export default function RecordGlucosePage(): JSX.Element {
     const [breakfast, setBreakfast] = useState<string>("");
     const [lunch, setLunch] = useState<string>("");
@@ -41,6 +15,10 @@ export default function RecordGlucosePage(): JSX.Element {
     const [notes, setNotes] = useState<string>("");
     const [savedLogs, setSavedLogs] = useState<GlucoseLog[]>([]);
     const [editId, setEditId] = useState<number | null>(null);
+    const { t } = useTranslation();
+    const changeLanguage = (lng: string) => {
+        i18n.changeLanguage(lng);
+    };
 
     useEffect(() => {
         const fetchLogs = async () => {
@@ -49,6 +27,38 @@ export default function RecordGlucosePage(): JSX.Element {
         };
         fetchLogs();
     }, []);
+
+    const handleSave = async (
+        breakfast: string,
+        lunch: string,
+        dinner: string,
+        bedtime: string,
+        notes: string,
+        id?: number
+    ): Promise<void> => {
+        if (id) {
+            await dbUpdate(id, breakfast, lunch, dinner, bedtime, notes);
+            Alert.alert(t("LogUpdated"));
+        } else {
+            const savedId = await dbSave(breakfast, lunch, dinner, bedtime, notes);
+            if (savedId) {
+                Alert.alert(t("LogCreated"));
+                
+                console.log(`Log saved with ID: ${savedId}`);
+            }
+            else {
+                Alert.alert("Log cound not be created")
+            }
+        }
+        router.replace("/pages/recordglucose/RecordGlucosePage");
+    };
+    
+    const handleDelete = async (id: number): Promise<void> => {
+        await dbDelete(id);
+        Alert.alert(t("LogDeleted"));
+        router.replace("/pages/recordglucose/RecordGlucosePage");
+    };
+    
 
     const handleEdit = (log: GlucoseLog) => {
         setBreakfast(log.breakfast);
@@ -59,11 +69,6 @@ export default function RecordGlucosePage(): JSX.Element {
         setEditId(log.id || null);
     };
 
-    const { t } = useTranslation();
-
-    const changeLanguage = (lng: string) => {
-        i18n.changeLanguage(lng);
-    };
 
     const goHome = () => {
         router.replace("/pages/HomePage");

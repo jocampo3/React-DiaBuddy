@@ -80,5 +80,9 @@
   "Save": "Guardar",
   "Logs": "Registros guardados",
   "Edit": "Editar",
-  "Delete": "Quitar"
+  "Delete": "Quitar",
+  "LogCreated": "¡Registro creado!",
+  "LogUpdated": "¡Registro actualizado!",
+  "LogDeleted": "¡Registro eliminado!"
+
 }
