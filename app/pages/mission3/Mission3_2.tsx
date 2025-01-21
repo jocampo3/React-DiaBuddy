@@ -20,7 +20,7 @@ export default function CheckInsulinPage2() {
         <Text style={styles.bodyText}>{t("M3.Step2")}</Text>
 
         <Image
-          source={require('@/assets/images/InsulinInjection/InsulinInjection.webp')}
+          source={require('@/assets/images/InsulinInjection/insulingInjection.jpg')}
           style={styles.image}
         />
       </View>
